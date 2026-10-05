@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Blood | BloodLife</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #fff5f5;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #a80000;
+            padding: 22px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            color: white;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffb3b3;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #ffcccc;
+        }
+
+        /* MAIN */
+        .main {
+            min-height: calc(100vh - 75px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title h1 {
+            color: #a80000;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #666;
+        }
+
+        /* SEARCH CARD */
+        .search-card {
+            background: white;
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .input {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .input label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .input select,
+        .input input {
+            width: 100%;
+            padding: 13px;
+
+            border: 1px solid #ddd;
+            border-radius: 7px;
+
+            font-size: 15px;
+        }
+
+        .input select:focus,
+        .input input:focus {
+            outline: none;
+            border-color: #c00000;
+        }
+
+        .search-btn {
+            width: 100%;
+            padding: 14px;
+
+            border: none;
+            border-radius: 7px;
+
+            background: #c00000;
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background: #900000;
+        }
+
+        /* RESULT */
+        #result {
+            display: none;
+            margin-top: 25px;
+        }
+
+        .result-title {
+            color: #a80000;
+            margin-bottom: 15px;
+        }
+
+        .donor {
+            background: #fff;
+            border-left: 5px solid #c00000;
+
+            padding: 20px;
+            margin-bottom: 12px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .donor h3 {
+            color: #a80000;
+            margin-bottom: 8px;
+        }
+
+        .donor p {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .call-btn {
+            display: inline-block;
+            margin-top: 10px;
+
+            padding: 9px 18px;
+
+            background: #c00000;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .menu {
+                gap: 15px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .title h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🩸 Blood<span>Life</span>
+        </div>
+
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="donate.html">Donate</a>
+            <a href="find.html">Find Blood</a>
+            <a href="#">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <div class="container">
+
+            <div class="title">
+
+                <h1>🔎 Find Blood</h1>
+
+                <p>
+                    Search for blood donors in your city.
+                </p>
+
+            </div>
+
+
+            <div class="search-card">
+
+                <div class="form-row">
+
+                    <div class="input">
+
+                        <label>Blood Group</label>
+
+                        <select id="bloodGroup">
+
+                            <option value="">
+                                Select Blood Group
+                            </option>
+
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>City</label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            placeholder="Enter city"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="search-btn"
+                    onclick="searchBlood()"
+                >
+                    Search Blood
+                </button>
+
+
+                <!-- RESULT -->
+                <div id="result">
+
+                    <h2 class="result-title">
+                        Available Donors
+                    </h2>
+
+                    <div class="donor">
+
+                        <h3>🩸 Rahul Patil</h3>
+
+                        <p>
+                            Blood Group: <strong>O+</strong>
+                        </p>
+
+                        <p>
+                            City: Pune
+                        </p>
+
+                        <a
+                            href="tel:9876543210"
+                            class="call-btn"
+                        >
+                            📞 Contact Donor
+                        </a>
+
+                    </div>
+
+                    <div class="donor">
+
+                        <h3>🩸 Amit Sharma</h3>
+
+                        <p>
+                            Blood Group: <strong>O+</strong>
+                        </p>
+
+                        <p>
+                            City: Pune
+                        </p>
+
+                        <a
+                            href="tel:9876543211"
+                            class="call-btn"
+                        >
+                            📞 Contact Donor
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function searchBlood() {
+
+            const bloodGroup =
+                document.getElementById("bloodGroup").value;
+
+            const city =
+                document.getElementById("city").value;
+
+            if (bloodGroup === "" || city === "") {
+
+                alert("Please select blood group and enter city.");
+
+                return;
+            }
+
+            document.getElementById("result").style.display = "block";
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodLife - Donate</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #fff5f5;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #a80000;
+            padding: 22px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffb3b3;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #ffcccc;
+        }
+
+        /* MAIN */
+
+        .main {
+            min-height: calc(100vh - 75px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 600px;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .card h1 {
+            text-align: center;
+            color: #a80000;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* FORM */
+
+        .input {
+            margin-bottom: 18px;
+        }
+
+        .input label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .input input,
+        .input select {
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ddd;
+            border-radius: 7px;
+
+            font-size: 15px;
+        }
+
+        .input input:focus,
+        .input select:focus {
+            outline: none;
+            border-color: #c00000;
+        }
+
+        button {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+            border-radius: 7px;
+
+            background: #c00000;
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #900000;
+        }
+
+        #message {
+            display: none;
+
+            margin-top: 20px;
+            padding: 12px;
+
+            background: #e8f8ed;
+            color: green;
+
+            text-align: center;
+            border-radius: 7px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:700px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .menu {
+                gap: 15px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🩸 Blood<span>Life</span>
+    </div>
+
+    <div class="menu">
+
+        <a href="index.html">Home</a>
+
+        <a href="donate.html">Donate</a>
+
+        <a href="find.html">Find Blood</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<div class="main">
+
+    <div class="card">
+
+        <h1>🩸 Donate Blood</h1>
+
+        <p class="subtitle">
+            Register yourself as a blood donor.
+        </p>
+
+
+        <form id="donateForm">
+
+            <div class="input">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input">
+
+                <label>Mobile Number</label>
+
+                <input
+                    type="tel"
+                    placeholder="Enter mobile number"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input">
+
+                <label>Blood Group</label>
+
+                <select required>
+
+                    <option value="">
+                        Select Blood Group
+                    </option>
+
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input">
+
+                <label>Age</label>
+
+                <input
+                    type="number"
+                    min="18"
+                    max="65"
+                    placeholder="Enter your age"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input">
+
+                <label>City</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your city"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input">
+
+                <label>Last Donation Date</label>
+
+                <input type="date">
+
+            </div>
+
+
+            <button type="submit">
+                Register as Donor
+            </button>
+
+        </form>
+
+
+        <div id="message">
+            ❤️ Thank you for registering as a donor!
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+document
+.getElementById("donateForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    document
+    .getElementById("message")
+    .style.display = "block";
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>

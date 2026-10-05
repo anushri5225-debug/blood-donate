@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodLife - Contact</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #fff5f5;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #a80000;
+            padding: 22px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ffb3b3;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #ffcccc;
+        }
+
+        /* MAIN */
+
+        .main {
+            min-height: calc(100vh - 75px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title h1 {
+            color: #a80000;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #666;
+        }
+
+        /* CONTENT */
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.10);
+        }
+
+        .card h2 {
+            color: #a80000;
+            margin-bottom: 20px;
+        }
+
+        /* INFO */
+
+        .info {
+            margin-bottom: 22px;
+        }
+
+        .info h3 {
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .info p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* FORM */
+
+        .input {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ddd;
+            border-radius: 7px;
+
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+            border-radius: 7px;
+
+            background: #c00000;
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #900000;
+        }
+
+        #message {
+            display: none;
+
+            margin-top: 18px;
+            padding: 12px;
+
+            background: #e8f8ed;
+            color: green;
+
+            text-align: center;
+
+            border-radius: 7px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:700px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .menu {
+                gap: 15px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .title h1 {
+                font-size: 32px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🩸 Blood<span>Life</span>
+    </div>
+
+    <div class="menu">
+
+        <a href="index.html">Home</a>
+
+        <a href="donate.html">Donate</a>
+
+        <a href="find.html">Find Blood</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+</nav>
+
+
+<div class="main">
+
+    <div class="container">
+
+        <div class="title">
+
+            <h1>📞 Contact Us</h1>
+
+            <p>
+                We are here to help you.
+            </p>
+
+        </div>
+
+
+        <div class="content">
+
+
+            <!-- CONTACT INFO -->
+
+            <div class="card">
+
+                <h2>Get In Touch</h2>
+
+
+                <div class="info">
+
+                    <h3>📍 Address</h3>
+
+                    <p>
+                        BloodLife Foundation,<br>
+                        Pune, Maharashtra, India
+                    </p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <h3>📞 Phone</h3>
+
+                    <p>
+                        +91 98765 43210
+                    </p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <h3>📧 Email</h3>
+
+                    <p>
+                        bloodlife@example.com
+                    </p>
+
+                </div>
+
+
+                <div class="info">
+
+                    <h3>🩸 Emergency</h3>
+
+                    <p>
+                        For urgent blood requirements,
+                        please contact us immediately.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE FORM -->
+
+            <div class="card">
+
+                <h2>Send Message</h2>
+
+                <form id="contactForm">
+
+                    <div class="input">
+
+                        <label>Your Name</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Message</label>
+
+                        <textarea
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+
+                <div id="message">
+                    ❤️ Thank you! Your message has been received.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    document
+    .getElementById("message")
+    .style.display = "block";
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
